@@ -39,3 +39,7 @@
 
 # debug information files
 *.dwo
+
+**build/mcp-server/node_modules/
+**mcp-server
+**build
