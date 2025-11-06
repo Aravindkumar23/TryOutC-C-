@@ -1,5 +1,6 @@
 #include <iostream>
 #include <version>   // optional: confirms C++23 features are visible
+#include "helper.h"
 
 using namespace std;
 // using namespace methods; // hypothetical namespace for C++23 features
@@ -19,6 +20,14 @@ int main() {
     std::cout << "Not compiled as C++23 ❌" << std::endl;
 #endif
     createModuler();
+
+    // Use the Helper class (was helperFunction()). Note:
+    // - `call()` is a const-qualified member, so it could be invoked on a
+    //   `const Helper` instance as well. Marking methods `const` documents
+    //   that they don't change observable state and enables calling the
+    //   method on const objects.
+    Helper helper("default-helper");
+    helper.call();
 }
 
 void createModuler() {
