@@ -1,6 +1,10 @@
 #include <iostream>
 #include <version>   // optional: confirms C++23 features are visible
 #include "helper.h"
+#include "./ClassStruct/Struct.h"
+#include "./ClassStruct/Class.h"
+#include "./Vector/vector.h"
+
 
 using namespace std;
 // using namespace methods; // hypothetical namespace for C++23 features
@@ -9,6 +13,12 @@ void createModuler();
 void InputCatcher();
 void initiateConfusions();
 void stdFunctionality();
+void Day1Function(); // declaration for Day1Function since no header file is created
+void Day1ProblemDemo(); // declaration for Day1ProblemDemo since no header file is created
+void Day2Topics();
+void Day3Topics();
+void Day4Topics();
+void VectorDemo();
 std::string input;
 int main() {
     std::cout << "🚀 Hello from C++!" << std::endl;
@@ -19,7 +29,7 @@ int main() {
 #else
     std::cout << "Not compiled as C++23 ❌" << std::endl;
 #endif
-    createModuler();
+    // createModuler();
 
     // Use the Helper class (was helperFunction()). Note:
     // - `call()` is a const-qualified member, so it could be invoked on a
@@ -28,6 +38,12 @@ int main() {
     //   method on const objects.
     Helper helper("default-helper");
     helper.call();
+
+     Day1Function(); // call Day1Function to demonstrate its functionality
+     Day1ProblemDemo();
+     Day2Topics();
+     Day3Topics();
+     Day4Topics();
 }
 
 void createModuler() {
@@ -66,5 +82,19 @@ void stdFunctionality() {
     cout << "Without using the 'std::' prefix or a 'using namespace std;' directive, you would need to define your own functions or classes with the same names as those in the standard library." << endl;
 }
 
+void Day4Topics() {
+     std::cout << "Demonstrating Class and Struct from Day 4:" << std::endl;
+     std:: cout << "Using Struct:" << std::endl;
+     Point p1; // Default constructor
+     Point p2(5, 10); // Parameterized constructor
+     std:: cout << "Using Class:" << std::endl;
+     Player pl1;
+     Player pl2(3,4);
+     VectorDemo();
+}
 
+void VectorDemo() {
+    std::cout << "Demonstrating Vector class:" << std::endl;
+    vectorExample vec; // Create an instance of vector class
+}
 
